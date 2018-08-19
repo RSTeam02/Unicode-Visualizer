@@ -51,6 +51,7 @@ export class Controller {
         $(".icon").on("click", (e) => {
             $("#cssContent").attr("content", String.fromCodePoint(parseInt($(e.target).attr("value"))));
         });
+       
     }
 
     resizeListener() {
@@ -64,8 +65,7 @@ export class Controller {
             let font;
             let ucode = $("#uc").val();
             font = ($("#sans").prop('checked')) ? "serif" : "sans-serif";
-            $("#cssContent").css("font-family", font);
-            $("#ucInfo").html(`U+${parseInt(ucode).toString(16)}`)
+            $("#cssContent").css("font-family", font);            
             $("#cssContent").attr("content", String.fromCodePoint(ucode));
         });
     }
@@ -108,7 +108,6 @@ export class Controller {
                 } else {
                     utfBlock = utfRange;
                 }
-
             } catch (error) {
                 console.log(error)
             }
@@ -121,7 +120,7 @@ export class Controller {
         $("#utfRaster").remove();
         $("<div id='utfRaster'></div>").insertAfter("#container");
         for (let i = block.from; i <= block.to; i++) {
-            $("#utfRaster").append(`<span class="icon" value=${i}>${String.fromCodePoint(i)}</span>`);
+            $("#utfRaster").append(`<span class="icon" title="${i.toString(16).toUpperCase()}" value=${i}>${String.fromCodePoint(i)}</span>`);
         }
     }
 }

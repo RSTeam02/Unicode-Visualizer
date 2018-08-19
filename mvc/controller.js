@@ -112,7 +112,6 @@ export class Controller {
                 console.log(error)
             }
         }
-
         return utfBlock;
     }
 
@@ -120,7 +119,7 @@ export class Controller {
         $("#utfRaster").remove();
         $("<div id='utfRaster'></div>").insertAfter("#container");
         for (let i = block.from; i <= block.to; i++) {
-            $("#utfRaster").append(`<span class="icon" title="${i.toString(16).toUpperCase()}" value=${i}>${String.fromCodePoint(i)}</span>`);
+            $("#utfRaster").append(`<span class="icon" title="${i.toString(16).toUpperCase()}" value=${i}>${String.fromCodePoint(i)}\u2000</span>`);
         }
     }
 }

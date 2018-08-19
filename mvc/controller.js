@@ -11,13 +11,22 @@
 export class Controller {
 
     constructor() {
-        $("form").before("<div id ='container'></div>");
+        $("fieldset").before("<div id ='container'></div>");
         $("#container").append('<div id ="cssContent"></div>');
         this.resize();
         this.resizeListener();
         this.utfBlockListener();
         this.rangeListener();
         this.initRaster();
+        this.keyListener();
+    }
+
+    keyListener() {
+        $("#utfFromTo").on("keydown", (e) => {
+            if (e.keyCode === 13) {
+                this.initRaster();
+            }
+        });
     }
 
     initRaster() {

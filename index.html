@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+        #cssContent:before {
+            content: attr(content);
+
+        }
+
+        #container {
+            width: 100%;
+            text-align: center;
+        }
+        #utfRaster{
+            cursor: pointer;
+        }
+
+        .icon{
+            padding: 5px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="import/class.js" type="module"></script>
+</head>
+
+<body>
+    <h1>Unicode-Visualizer</h1>
+    <form>
+        <fieldset>
+            <legend id="utfBlock">
+                UTF-Block
+            </legend>
+            <input class="utfBlk" type="radio" id="smilies" name="sel1" checked/>Smilies
+            <input class="utfBlk" type="radio" id="pictograms" name="sel1" />Pictograms
+            <input class="utfBlk" type="radio" id="custom" name="sel1" />UTF-Range
+            <input type="text" id="utfFromTo" name="sel1" placeholder="eg. 3040-309F"/>
+        </fieldset>
+        
+    </form>
+</body>
+
+</html>
